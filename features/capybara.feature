@@ -5,7 +5,7 @@ Feature: Capybara's cucumber integration
 
   Scenario: hello world
     When I visit the root page
-    Then I should see "Hello world!"
+    Then I should see "Hello world!!!"
 
   @javascript
   Scenario: javascript tag should use Capybara.javascript_driver
