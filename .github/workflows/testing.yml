@@ -1,8 +1,8 @@
 name: CI
 
-on: 
+on:
   push:
-    branches: 
+    branches:
       - master
 
 jobs:
@@ -11,13 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
+    - uses: actions/checkout@v2
+    - uses: eregon/use-ruby-action@v1
       with:
-        ruby-version: 2.6.x
+        ruby-version: 2.6
+    - run: ruby -v
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v2
     - name: Build and test with cuucmber
       run: |
         gem install bundler
-        bundle install --jobs 4 --retry 3
+        bundle install
         bundle exec cucumber

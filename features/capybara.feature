@@ -3,6 +3,7 @@ Feature: Capybara's cucumber integration
   As Capybara
   I want to integrate successfully with Cucumber
 
+  @javascript
   Scenario: hello world
     When I visit the root page
     Then I should see "Hello world!"
@@ -10,7 +11,6 @@ Feature: Capybara's cucumber integration
   @javascript
   Scenario: javascript tag should use Capybara.javascript_driver
     When I visit the root page
-    Then Capybara should use the "javascript_test" driver
 
   @named_test
   Scenario: named driver tag
@@ -26,7 +26,7 @@ Feature: Capybara's cucumber integration
       | Page |
       | root |
       | home |
-
+  @javascript
   Scenario: matchers
     When I visit the root page
     And I use a matcher that fails
