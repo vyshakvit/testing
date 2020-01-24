@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: master
+        ref: dev
     - uses: eregon/use-ruby-action@v1
       with:
         ruby-version: 2.6
